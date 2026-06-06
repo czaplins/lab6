@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab6</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="p-8 bg-purple-400 min-h-screen text-gray-800 font-mono">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6">Moje artykuły</h1>
+      <div class="mb-4">
+        <label for="sort-select" class="font-medium mr-2">Sortuj:</label>
+        <select id="sort-select" class="border-2 border-purple-700 rounded p-2 bg-white">
+          <option value="created_at.asc">po dacie rosnąco</option>
+          <option value="created_at.desc">po dacie malejąco</option>
+          <option value="title.asc">po nazwie alfabetycznie</option>
+        </select>
+      </div>
+      <div id="articles-container" class="space-y-3 mr-2"></div>
+
+      <h2 class="text-2xl font-bold m-4">Dodaj nowy artykuł</h2>
+      <form id="add-article-form" class="bg-white shadow-md rounded-lg p-6 border border-gray-200 space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Tytuł</label>
+          <input type="text" id="title" required class="w-full border border-gray-300 rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Podtytuł</label>
+          <input type="text" id="subtitle" required class="w-full border border-gray-300 rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Autor</label>
+          <input type="text" id="author" required class="w-full border border-gray-300 rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Treść</label>
+          <textarea id="content" required rows="4" class="w-full border border-gray-300 rounded p-2"></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Data utworzenia</label>
+          <input type="datetime-local" id="created_at" class="w-full border border-gray-300 rounded p-2" />
+        </div>
+        <button type="submit" class="bg-purple-700 text-white font-bold py-2 px-5 rounded hover:bg-purple-500 transition">
+          Dodaj artykuł
+        </button>
+      </form>
+    </div>
+    
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
